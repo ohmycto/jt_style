@@ -21,7 +21,6 @@ jQuery(document).ready(function() {
     var link = jQuery("#variant-thumbnails a")[0];
 
     jQuery("#main-image img").attr({src: jQuery(link).attr('href')});
-    jQuery("#main-image a").attr({href: jQuery(link).attr('large')});
     jQuery('ul.thumbnails li').removeClass('selected');
     jQuery(link).parent('li').addClass('selected');
   });
@@ -50,7 +49,6 @@ jQuery(document).ready(function() {
     var link = jQuery("#variant-thumbnails a")[0];
 
     jQuery("#main-image img").attr({src: jQuery(link).attr('href')});
-    jQuery("#main-image a").attr({src: jQuery(link).attr('large')});
     jQuery('ul.thumbnails li').removeClass('selected');
     jQuery(link).parent('li').addClass('selected');
   }
