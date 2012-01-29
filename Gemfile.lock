@@ -93,6 +93,7 @@ GEM
       rails (~> 3.0)
       thor (~> 0.14.4)
     json (1.5.4)
+    kgio (2.7.0)
     mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -140,6 +141,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.4)
+    raindrops (0.8.0)
     rake (0.9.2.2)
     rd_find_by_param (0.1.1)
       activerecord (~> 3.0)
@@ -224,6 +226,10 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.31)
+    unicorn (4.1.1)
+      kgio (~> 2.4)
+      rack
+      raindrops (~> 0.6)
     warden (1.0.6)
       rack (>= 1.0)
     will_paginate (3.0.pre2)
@@ -243,3 +249,4 @@ DEPENDENCIES
   synergy (~> 0.60.0)
   synergy_default_theme (= 1.0.2)
   synergy_inventory_management!
+  unicorn

@@ -33,7 +33,7 @@ end
 set :unicorn_conf, "/etc/unicorn/jt-style.filippovaw.rb"
 set :unicorn_pid, "/var/run/unicorn/jt-style.filippovaw.pid"
 
-set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use 1.8.7 do bundle exec unicorn_rails -Dc #{unicorn_conf})"
+set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use ree-1.8.7 do bundle exec unicorn_rails -Dc #{unicorn_conf})"
 
 # - for unicorn - #
 namespace :deploy do
