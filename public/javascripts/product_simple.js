@@ -14,7 +14,7 @@ jQuery(document).ready(function() {
     } else {
       jQuery("#variant-images").hide();
 
-      if (mainImage) {
+      if (mainImage != "undefined") {
         jQuery("#main-image img").attr({src: mainImage[0]});
         jQuery(".overlay_container .large_image img").attr({src: mainImage[1]});
         jQuery("#main-image a").attr({href: mainImage[1]});

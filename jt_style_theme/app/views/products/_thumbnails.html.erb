@@ -25,7 +25,7 @@
 
 <% content_for :head do %>
   <script type="text/javascript" charset="utf-8">
-    <% if product.images.size > 0 %>
+    <% if @product.images.size > 0 %>
       var mainImage = new Array();
       mainImage[0] = <%== product.images.first.attachment.url(:product).to_json %>;
       mainImage[1] = <%== product.images.first.attachment.url(:large).to_json %>;
