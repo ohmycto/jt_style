@@ -40,3 +40,4 @@ gem 'synergy', '~> 0.60.0'
 gem 'synergy_default_theme', '1.0.2'
 gem 'synergy_inventory_management', :git => 'git://github.com/secoint/synergy_inventory_management.git'
 
+gem "jt_style_theme", :require => "jt_style_theme", :path => "jt_style_theme"

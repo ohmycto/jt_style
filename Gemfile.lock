@@ -27,6 +27,12 @@ GIT
     spree_i18n (1.0.0)
       spree_core (>= 0.30.0)
 
+PATH
+  remote: jt_style_theme
+  specs:
+    jt_style_theme (0.60.4)
+      spree_core (>= 0.60.4)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -240,6 +246,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   dalli
+  jt_style_theme!
   mysql2 (~> 0.2.7)
   rails (= 3.0.10)
   spree (~> 0.60.4)
