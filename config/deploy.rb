@@ -8,12 +8,16 @@ set :repository,  "git://github.com/secoint/jt_style.git"
 
 set :user, "hosting_filippovaw"
 set :use_sudo, false
-set :deploy_to, "/home/hosting_filippovaw/projects/jt-style"
-
+set :deploy_to, "/home/#{user}/projects/jt-style"
 
 role :web, "lithium.locum.ru"   # Your HTTP server, Apache/etc
 role :app, "lithium.locum.ru"   # This may be the same as your `Web` server
 role :db,  "lithium.locum.ru", :primary => true # This is where Rails migrations will run
+
+set :unicorn_rails, "/var/lib/gems/1.8/bin/unicorn_rails"
+set :bundler, "/var/lib/gems/1.8/bin/bundle"
+set :rails, "/var/lib/gems/1.8/bin/rails"
+set :rake, "/var/lib/gems/1.8/bin/rake"
 
 # эта секция для того, чтобы вы не хранили доступ к базе в системе контроля версий. Поместите dayabase.yml в shared,
 # чтобы он копировался в нужный путь при каждом выкладывании новой версии кода
@@ -28,6 +32,9 @@ task :copy_database_config, roles => :app do
   db_config = "#{shared_path}/database.yml"
   run "cp #{db_config} #{release_path}/config/database.yml"
   run "ln -s #{shared_path}/assets #{release_path}/public/assets"
+  run ["cd #{deploy_to}/current",
+       "#{bundler} install --path /home/#{user}/.gem",
+       "#{bundler} exec #{rake} jt_style_theme:install"].join(" && ")
 end
 
 set :unicorn_conf, "/etc/unicorn/jt-style.filippovaw.rb"
