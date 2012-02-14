@@ -50,17 +50,19 @@
 
     $('input#order_use_billing').click(function() {
       if($(this).is(':checked')) {
-        $("#shipping .inner input").attr('disabled', 'disabled');
-        $("#shipping .inner select").attr('disabled', 'disabled');
-        $("#shipping .inner").fadeOut();
-        $("#shipping .select_address").fadeOut();
+        $('#shipping .inner input, #shipping .inner select, #shipping .inner label, #shipping .inner .req').hide();
+        $('#shipping .inner input, #shipping .inner select').attr('disabled', 'disabled');
       } else {
-        if ($("input[name='order[ship_address_id]']:checked").val() == '0') {
-          $("#shipping .inner input").removeAttr('disabled');
-          $("#shipping .inner select").removeAttr('disabled');
-          $("#shipping .inner").fadeIn();
+        $('#shipping .inner input, #shipping .inner select, #shipping .inner label, #shipping .inner .req').show();
+        $('#shipping .inner input, #shipping .inner select').removeAttr('disabled', 'disabled');
+
+        //only want to enable relevant field
+        if(get_states('s')){
+          $('span#sstate input').hide().attr('disabled', 'disabled');
+        }else{
+          $('span#sstate select').hide().attr('disabled', 'disabled');
         }
-        $("#shipping .select_address").fadeIn();
+
       }
     }).triggerHandler('click');
 

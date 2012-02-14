@@ -32,7 +32,7 @@ gem 'dalli'
 # end
 
 gem 'mysql2', '~> 0.2.7'
-gem 'spree', '~> 0.60.4'
+gem 'spree', :git => 'git://github.com/spree/spree.git', :branch => '0-60-stable'
 gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git', :ref => 'a185d160047ce54f07bd47f7d417d9e2681fbb07'
 gem 'spree_compare_products', :git => 'git://github.com/romul/spree_compare_products.git'
 gem 'spree_reviews', :git => 'git://github.com/romul/spree-reviews.git'
@@ -41,3 +41,4 @@ gem 'synergy_default_theme', '1.0.2'
 gem 'synergy_inventory_management', :git => 'git://github.com/secoint/synergy_inventory_management.git'
 
 gem "jt_style_theme", :require => "jt_style_theme", :path => "jt_style_theme"
+
