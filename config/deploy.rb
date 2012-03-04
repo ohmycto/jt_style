@@ -33,7 +33,7 @@ task :copy_database_config, roles => :app do
   run "cp #{db_config} #{release_path}/config/database.yml"
   run "ln -s #{shared_path}/assets #{release_path}/public/assets"
   run ["cd #{deploy_to}/current",
-       "#{bundler} install --path /home/#{user}/.gem",
+       "#{bundler} install --path ~/.gem",
        "#{bundler} exec #{rake} jt_style_theme:install"].join(" && ")
 end
 

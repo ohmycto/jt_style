@@ -260,7 +260,7 @@ legend {
 }
 body {
   margin-top: 10px;
-  background: #ffffff url(../images/body-back.png) top left repeat-x;
+  background: #ffffff;
 }
 div.left {
   float: left;
@@ -914,3 +914,4 @@ div#checkout #checkout-summary {
   padding: 20px;
   width: 180px;
 }
+
